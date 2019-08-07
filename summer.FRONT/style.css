@@ -1,0 +1,20 @@
+#categ{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 40px;
+}
+
+.bulavka{
+    width: 50px;
+}
+
+.col-3{
+    background-color: #ffc5d6;
+}
+
+.col-9{
+    background-color: #cc6fa9;
+}
+.btn-ctg{
+    padding-left: 2px;
+}
+

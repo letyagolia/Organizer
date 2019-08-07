@@ -1,0 +1,54 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+            <title>Organizer</title>
+            
+        </head>
+        <body class="mx-md-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col bg-dark text-white">
+                        <a class="navbar-brand">Организуй свою жизнь! </a>   
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-3">
+                        
+                        <p id="categ">Категории</p>
+                        <hr style="border: 2px solid black"/><br/>
+                        
+                        <div class="row mx-0">
+                            
+                            <div id="ctg"></div>
+                            <button type="button" class="btn btn-secondary btn-block" id="newCtg">Новая категория</button>
+                            <button type="button" class="btn btn-secondary btn-block bcateg" id="all">Все</button>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-9">
+                        <div class="row" id="content"></div>
+                        <div class="row" id="crud"></div>
+                        <div class="row" id="delete"></div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="script/Strings.js"></script>
+                <script src="script/Category.js"></script>
+                <script src="script/Folder.js"></script>
+                <script src="script/Note.js"></script>
+                <script src="script/onStart.js"></script>
+                <script src="script/Events.js"></script>
+        </body>
+    </html>

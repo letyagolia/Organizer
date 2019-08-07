@@ -1,0 +1,14 @@
+C:\Users\Olga\source\repos\summer\bin\Debug\netcoreapp2.1\summer.deps.json
+C:\Users\Olga\source\repos\summer\bin\Debug\netcoreapp2.1\summer.runtimeconfig.json
+C:\Users\Olga\source\repos\summer\bin\Debug\netcoreapp2.1\summer.runtimeconfig.dev.json
+C:\Users\Olga\source\repos\summer\bin\Debug\netcoreapp2.1\summer.dll
+C:\Users\Olga\source\repos\summer\bin\Debug\netcoreapp2.1\summer.pdb
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.csprojAssemblyReference.cache
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.csproj.CoreCompileInputs.cache
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.RazorAssemblyInfo.cache
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.RazorAssemblyInfo.cs
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.AssemblyInfoInputs.cache
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.AssemblyInfo.cs
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.RazorTargetAssemblyInfo.cache
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.dll
+C:\Users\Olga\source\repos\summer\obj\Debug\netcoreapp2.1\summer.pdb
