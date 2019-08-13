@@ -8,7 +8,8 @@ namespace summer.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public Category Category { get; set; }
         public Guid CategoryId { get; set; }
-        List<Note> Notes { get; set; }
+        public virtual List<Note> Notes { get; set; }
     }
 }

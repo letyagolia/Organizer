@@ -9,6 +9,7 @@ namespace summer.Domain.Dto
         public Guid Id { get; set; }
         public string Name { get; set; }
         public Guid CategoryId { get; set; }
-        List<NoteDto> Notes { get; set; }
+        public CategoryDto CategoryDto { get; set; }
+        public virtual List<NoteDto> Notes { get; set; }
     }
 }

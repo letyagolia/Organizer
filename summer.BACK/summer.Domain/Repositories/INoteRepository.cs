@@ -12,6 +12,7 @@ namespace summer.Domain.Repositories
         Task<List<NoteDto>> GetAllAsync();
         Task<NoteDto> GetByIdAsync(Guid id);
         Task<List<Note>> GetByFolderIdAsync(Guid id);
+        Task<List<Note>> GetByNoteDoneAsync(bool b);
         Task<NoteDto> CreateAsync(NoteDto item);
         Task<bool> DeleteAsync(Guid id);
         Task<bool> UpdateAsync(NoteDto noteDto);

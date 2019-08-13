@@ -8,6 +8,6 @@ namespace summer.Domain.Dto
     {
         public Guid ID { get; set; }   
         public string Name { get; set; }
-        List<FolderDto> FoldersDto { get; set; }
+        public virtual List<FolderDto> FoldersDto { get; set; }
     }
 }

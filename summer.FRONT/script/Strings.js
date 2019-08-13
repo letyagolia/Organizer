@@ -15,19 +15,52 @@ function card(id, name)
             </div></div>`;
 }
 
-//Вид заметки
-function noteCard(id, name, text, dateFrom, dateTo, importance)
+//Вид записи
+function noteCard(id, name, text, dateFrom, dateTo, importance, done)
 {
-    return `<div class="card col-3 mx-4 my-2" id="${id}">
-                
-                <div class="card-body">
-                    <h4>${name}</h4>
-                    <p>${text}</p>
-                    <p>${dateFrom} - ${dateTo}</p>
-                    <p>${importance}</p>
-                    <p><button type="button" class="btn btn-secondary deleteNBtn" id="${id}">Удалить</button><button type="button" class="btn btn-secondary updateCBtn" id="${id}">Изменить</button></p>
-                    
-            </div></div>`;
+    if(done == false)
+        return `<div class="card col-3 mx-4 my-2" id="${id}">
+                    <div class="form-check">
+                         <input class="form-check-input" onchange="fromCheckBoxFalse(this.value)" type="checkbox" value="${id}" id="check">
+                    </div>
+                    <div class="card-body">
+                        <p><h4>${name}</h4></p>
+                        <p>${text}</p>
+                        <p>${dateFrom} - ${dateTo}</p>
+                        <p>${importance}</p>
+                        <p><button type="button" class="btn btn-secondary updateNBtn" id="${id}">Изменить</button></p>
+                        <p><button type="button" class="btn btn-secondary deleteNBtn" id="${id}">Удалить</button></p>
+
+                </div></div>`;
+    else
+        return `<div class="card col-3 mx-4 my-2" id="${id}">
+                    <div class="form-check">
+                         <input class="form-check-input" type="checkbox" id="check" onchange="fromCheckBoxTrue(this.value)" value="${id}" checked>
+                    </div>
+                    <div class="card-body">
+                        <p><h4>${name}</h4></p>
+                        <p>${text}</p>
+                        <p>${dateFrom} - ${dateTo}</p>
+                        <p>${importance}</p>
+                        <p><button type="button" class="btn btn-secondary updateNBtn" id="${id}">Изменить</button></p>
+                        <p><button type="button" class="btn btn-secondary deleteNBtn" id="${id}">Удалить</button></p>
+
+                </div></div>`;
+}
+function fromCheckBoxFalse(o)
+{
+    let d = Boolean(true);
+    confirm('Good Job!');
+    console.log(o,d);
+    getNoteByIdDone(o,d);
+}
+
+function fromCheckBoxTrue(o)
+{
+    let d = Boolean(false);
+    confirm('Снова в бой?');
+    console.log(o,d);
+    getNoteByIdDone(o,d);
 }
 
 //Форма для создания категории
@@ -56,7 +89,7 @@ function deleteCtgButton(id){
 
 //Кнопка "Новая папка"
 function createFldButton(id){
-    return `<button type="button" class="btn btn-secondary newFld" id="${id}">Новая папка</button>`;
+    return `<button type="button" class="btn btn-secondary newFld" id="${id}">Создать папку</button>`;
 }
 
 //Форма для создания папки
@@ -68,13 +101,11 @@ function CreateFolderForm(id)
             <div class="col-12">
             <form name="createFldForm">
                 <div class="form-group">
-                    <label>Категория:</label>
-                    <input id="i_title" class="form-control" name="categoryId" value="${id}" />
                     <label>Название:</label>
                     <input id="i_title" class="form-control" name="name" />
                 </div>
             </form>
-            <button type="button" class="btn btn-outline-dark" id="createFoldBtn">Добавить</button>
+            <button type="button" class="btn btn-outline-dark createFoldBtn" id="${id}">Добавить</button>
             </div>`;
 }
 
@@ -99,7 +130,7 @@ function createNoteForm(id)
             <form name="createNoteForm">
                 <div class="form-group">
                     <label>Папка:</label>
-                    <input id="i_title" class="form-control" name="folderId" value="${id}" />
+                    <input id="i_title" class="form-control" name="folderId" value="${id}" disabled />
                     <label>Название:</label>
                     <input id="i_title" class="form-control" name="name" />
                     <label>Описание:</label>
@@ -113,5 +144,35 @@ function createNoteForm(id)
                 </div>
             </form>
             <button type="button" class="btn btn-outline-dark" id="createNoteBtn">Добавить</button>
+            <button type="button" class="btn btn-outline-dark back" id="${id}">Отмена</button>
             </div>`;
 }
+
+function updateNoteForm(id, name, text, dateFrom, dateTo, importance, folderId, done)
+{
+    return `<div class="col-12">
+                <h1>Задача</h1>
+            </div>
+            <div class="col-12">
+            <form name="updateNoteForm">
+                <div class="form-group">
+                    <label>Папка:</label>
+                    <input id="i_title" class="form-control" name="folderId" value="${folderId}" disabled/>
+                    <label>Название:</label>
+                    <input id="i_title" class="form-control" name="name" value="${name}" onchange="change(this.value)"/>
+                    <label>Описание:</label>
+                    <input id="i_title" class="form-control" name="text" value="${text}" onchange="change(this.value)"/>
+                    <label>Дата создания:</label>
+                    <input id="i_title" class="form-control" name="dateFrom" value="${dateFrom}" onchange="this.value" />
+                    <label>Дата завершения:</label>
+                    <input id="i_title" class="form-control" name="dateTo" value="${dateTo}" onchange="this.value" />
+                    <label>Важность:</label>
+                    <input id="i_title" class="form-control" name="importance" value="${importance}" onchange="this.value" />
+                </div>
+            </form>
+            <button type="button" class="btn btn-outline-dark updateNoteBtn" id="${id}">Добавить</button>
+            <button type="button" class="btn btn-outline-dark back" id="${folderId}">Отмена</button>
+            
+            </div>`;
+}
+

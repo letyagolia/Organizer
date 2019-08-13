@@ -36,6 +36,11 @@ namespace summer.Core.Repositories
             return await _context.Notes.Where(q => q.FolderId == id).ToListAsync();
         }
 
+        public async Task<List<Note>> GetByNoteDoneAsync(bool b)
+        {
+            return await _context.Notes.Where(p => p.Done == b).ToListAsync();
+        }
+
         public async Task<NoteDto> CreateAsync(NoteDto item)
         {
             var result = _context.Notes.Add(NoteConverter.Convert(item));

@@ -8,7 +8,7 @@ namespace summer.Domain.Entities
     {
         public Guid ID { get; set; }
         public string Name { get; set; }
-        List<Folder> Folders { get; set; }
+        public virtual List<Folder> Folders { get; set; }
     }
 }
              

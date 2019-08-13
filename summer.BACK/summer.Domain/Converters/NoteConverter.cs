@@ -19,7 +19,8 @@ namespace summer.Domain.Converters
                 DateFrom = note.DateFrom,
                 DateTo = note.DateTo,
                 Importance = note.Importance,
-                FolderId = note.FolderId
+                FolderId = note.FolderId,
+                Done = note.Done
             };
         }
 
@@ -33,7 +34,8 @@ namespace summer.Domain.Converters
                 DateFrom = note.DateFrom,
                 DateTo = note.DateTo,
                 Importance = note.Importance,
-                FolderId = note.FolderId
+                FolderId = note.FolderId,
+                Done = note.Done
             };
         }
 

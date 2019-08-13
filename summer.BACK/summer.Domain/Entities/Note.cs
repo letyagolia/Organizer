@@ -12,6 +12,8 @@ namespace summer.Domain.Entities
         public string DateFrom { get; set; }
         public string DateTo { get; set; }
         public string Importance { get; set; }
+        public bool Done { get; set; }
+        public Folder Folder { get; set; }
         public Guid FolderId { get; set; }
     }
 }

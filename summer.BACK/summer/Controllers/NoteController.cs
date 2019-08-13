@@ -34,7 +34,7 @@ namespace summer.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> GetById(Guid id)
         {
             try
             {
@@ -42,7 +42,6 @@ namespace summer.API.Controllers
             }
             catch (Exception ex)
             {
-
                 return StatusCode(500, ex);
             }
         }
@@ -53,6 +52,19 @@ namespace summer.API.Controllers
             try
             {
                 return Ok(await _repo.GetByFolderIdAsync(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex);
+            }
+        }
+
+        [HttpGet("done/{b}")]
+        public async Task<IActionResult> GetByDone(bool b)
+        {
+            try
+            {
+                return Ok(await _repo.GetByNoteDoneAsync(b));
             }
             catch (Exception ex)
             {

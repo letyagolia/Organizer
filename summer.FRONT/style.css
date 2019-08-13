@@ -11,10 +11,25 @@
     background-color: #ffc5d6;
 }
 
-.col-9{
+.col-8{
+    background-color: #cc6fa9;
+}
+.col-1{
     background-color: #cc6fa9;
 }
 .btn-ctg{
     padding-left: 2px;
 }
 
+#delete{
+    padding-top: 10px;
+}
+
+.deleteNBtn{
+    padding-top: 10px;
+}
+
+#check{
+    width: 30px;
+    height: 30px;
+}

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using summer.Core.EF;
 
 namespace summer.API.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    partial class TasksContextModelSnapshot : ModelSnapshot
+    [Migration("20190810084152_Again")]
+    partial class Again
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +77,7 @@ namespace summer.API.Migrations
 
             modelBuilder.Entity("summer.Domain.Entities.Folder", b =>
                 {
-                    b.HasOne("summer.Domain.Entities.Category", "Category")
+                    b.HasOne("summer.Domain.Entities.Category")
                         .WithMany("Folders")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -83,7 +85,7 @@ namespace summer.API.Migrations
 
             modelBuilder.Entity("summer.Domain.Entities.Note", b =>
                 {
-                    b.HasOne("summer.Domain.Entities.Folder", "Folder")
+                    b.HasOne("summer.Domain.Entities.Folder")
                         .WithMany("Notes")
                         .HasForeignKey("FolderId")
                         .OnDelete(DeleteBehavior.Cascade);
